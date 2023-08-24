@@ -45,7 +45,8 @@ public class CategoryController {
 		    	catRepo.findAll().forEach(category::add);
 			
 			    if (category.isEmpty()) {
-			      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			      // return new ResponseEntity<>(HttpStatus.NO_CONTENT);  OR
+			         throw new ResourceNotFoundException("No Data Found..");
 			    }
 			
 			    return new ResponseEntity<>(category, HttpStatus.OK);
