@@ -46,10 +46,12 @@ public class BooksController {
 	    	bookRepo.findAll().forEach(books::add);
 		
 		    if (books.isEmpty()) {
-		      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		      // return new ResponseEntity<>(HttpStatus.NO_CONTENT);  OR
+		         throw new ResourceNotFoundException("No Data Found..");
+
 		    }
 		 return new ResponseEntity<>(books, HttpStatus.OK);
-	  }
+	  } 
 	
 		
 	
