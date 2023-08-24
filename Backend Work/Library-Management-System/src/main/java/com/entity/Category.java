@@ -32,7 +32,7 @@ public class Category {
 	
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-	@JoinColumn(name = "category_id")
+	@JoinColumn(name = "category_id")  //  "category_id" column will create in "Books" table
 	private Set<Books> books = new HashSet<>();    // One Category has many Books.
 	
 	
